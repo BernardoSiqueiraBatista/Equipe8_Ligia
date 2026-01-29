@@ -8,3 +8,7 @@ env/
 __pycache__/
 *.py[cod]
 *$py.class
+
+#arquivos MAc
+**/.DS_Store
+.DS_Store
