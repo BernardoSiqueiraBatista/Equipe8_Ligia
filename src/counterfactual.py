@@ -540,7 +540,7 @@ def analyze_habits(x_original: pd.DataFrame, model: Pipeline, threshold=0.5):
     # Gerar recomendações priorizadas
     recommendations = []
     for i, habit in enumerate(problematic_habits, 1):
-        severity_emoji = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(habit["severity"], "⚪")
+        severity_emoji = {"high": "", "medium": "", "low": ""}.get(habit["severity"], "")
         recommendations.append({
             "priority": i,
             "severity_emoji": severity_emoji,
@@ -572,7 +572,7 @@ def format_analysis_report(analysis: dict) -> str:
     lines.append("=" * 60)
     
     # Resultado da predição
-    emoji = "😊" if analysis["prediction"] == "Bom" else "😟"
+    emoji = "" if analysis["prediction"] == "Bom" else ""
     lines.append(f"\n Qualidade do Sono Prevista: {analysis['prediction']} {emoji}")
     lines.append(f" Probabilidade de sono bom: {analysis['probability']:.1%}")
     
@@ -582,7 +582,7 @@ def format_analysis_report(analysis: dict) -> str:
         lines.append("-" * 60)
         
         for habit in analysis["problematic_habits"]:
-            severity_emoji = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(habit["severity"], "⚪")
+            severity_emoji = {"high": "", "medium": "", "low": ""}.get(habit["severity"], "")
             lines.append(f"\n{severity_emoji} {habit['feature']}")
             lines.append(f"    Situação: {habit['issue']}")
             lines.append(f"    Por quê: {habit['explanation']}")
