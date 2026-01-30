@@ -578,27 +578,27 @@ def format_analysis_report(analysis: dict) -> str:
     
     # Hábitos problemáticos
     if analysis["problematic_habits"]:
-        lines.append(f"\n⚠️  HÁBITOS PROBLEMÁTICOS IDENTIFICADOS ({analysis['total_issues']})")
+        lines.append(f"\n  HÁBITOS PROBLEMÁTICOS IDENTIFICADOS ({analysis['total_issues']})")
         lines.append("-" * 60)
         
         for habit in analysis["problematic_habits"]:
             severity_emoji = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(habit["severity"], "⚪")
             lines.append(f"\n{severity_emoji} {habit['feature']}")
-            lines.append(f"   📍 Situação: {habit['issue']}")
-            lines.append(f"   ❓ Por quê: {habit['explanation']}")
-            lines.append(f"   💡 Sugestão: {habit['suggestion']}")
-            lines.append(f"   🎯 Dica: {habit['tip']}")
+            lines.append(f"    Situação: {habit['issue']}")
+            lines.append(f"    Por quê: {habit['explanation']}")
+            lines.append(f"    Sugestão: {habit['suggestion']}")
+            lines.append(f"    Dica: {habit['tip']}")
     
     # Hábitos bons
     if analysis["good_habits"]:
-        lines.append(f"\n✅ HÁBITOS SAUDÁVEIS")
+        lines.append(f"\n HÁBITOS SAUDÁVEIS")
         lines.append("-" * 60)
         for habit in analysis["good_habits"]:
             lines.append(f"   {habit['status']} {habit['feature']}: {habit['current_value']:.1f} {habit['unit']}")
     
     # Recomendações priorizadas
     if analysis["recommendations"]:
-        lines.append(f"\n📋 RECOMENDAÇÕES (por prioridade)")
+        lines.append(f"\n RECOMENDAÇÕES (por prioridade)")
         lines.append("-" * 60)
         for rec in analysis["recommendations"]:
             lines.append(f"   {rec['priority']}. {rec['severity_emoji']} {rec['feature']}: {rec['action']}")
