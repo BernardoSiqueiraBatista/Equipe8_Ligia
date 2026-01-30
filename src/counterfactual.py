@@ -490,7 +490,7 @@ def analyze_habits(x_original: pd.DataFrame, model: Pipeline, threshold=0.5):
                 good_habits.append({
                     "feature": feature,
                     "current_value": current_value,
-                    "status": "✅ Dentro do recomendado",
+                    "status": " Dentro do recomendado",
                     "unit": unit
                 })
                 
@@ -513,7 +513,7 @@ def analyze_habits(x_original: pd.DataFrame, model: Pipeline, threshold=0.5):
                 good_habits.append({
                     "feature": feature,
                     "current_value": current_value,
-                    "status": "✅ Dentro do recomendado",
+                    "status": " Dentro do recomendado",
                     "unit": unit
                 })
         
@@ -568,13 +568,13 @@ def format_analysis_report(analysis: dict) -> str:
     
     # Cabeçalho
     lines.append("=" * 60)
-    lines.append("📊 RELATÓRIO DE ANÁLISE DE HÁBITOS DE SONO")
+    lines.append(" RELATÓRIO DE ANÁLISE DE HÁBITOS DE SONO")
     lines.append("=" * 60)
     
     # Resultado da predição
     emoji = "😊" if analysis["prediction"] == "Bom" else "😟"
-    lines.append(f"\n🎯 Qualidade do Sono Prevista: {analysis['prediction']} {emoji}")
-    lines.append(f"   Probabilidade de sono bom: {analysis['probability']:.1%}")
+    lines.append(f"\n Qualidade do Sono Prevista: {analysis['prediction']} {emoji}")
+    lines.append(f" Probabilidade de sono bom: {analysis['probability']:.1%}")
     
     # Hábitos problemáticos
     if analysis["problematic_habits"]:
