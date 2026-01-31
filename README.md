@@ -10,7 +10,7 @@ Ao invés de apenas classificar se o sono é bom ou ruim, o sistema responde:
 
 ---
 
-## 🎯 Objetivo do MVP
+##  Objetivo do MVP
 
 Dado o perfil de uma pessoa (idade, nível de estresse, atividade física, passos diários, IMC etc.), o sistema:
 
@@ -19,11 +19,11 @@ Dado o perfil de uma pessoa (idade, nível de estresse, atividade física, passo
 - Sugere o **menor conjunto de mudanças possíveis** para melhorar o resultado
 - Prioriza ações **realistas e executáveis** (counterfactual acionável)
 
-⚠️ Este projeto **não fornece diagnóstico médico**.
+
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 **Sleep Health and Lifestyle Dataset (Kaggle)**
 
@@ -42,7 +42,7 @@ A variável **Quality of Sleep** é transformada em binária:
 
 ---
 
-## 🧠 Modelagem
+##  Modelagem
 
 - Pipeline de pré-processamento:
   - One-hot encoding para variáveis categóricas
@@ -56,11 +56,11 @@ A variável **Quality of Sleep** é transformada em binária:
   - ROC-AUC
   - Matriz de confusão
 
-O foco do MVP é **explicabilidade e ação**, não maximização extrema de performance.
+Temos na pasta "artifact" os pesos dos modelos
 
 ---
 
-## 🖥️ Demo
+## Demo
 
 O projeto inclui uma demo simples (Streamlit) que mostra o fluxo completo:
 1. Entrada dos dados do usuário
@@ -69,8 +69,8 @@ O projeto inclui uma demo simples (Streamlit) que mostra o fluxo completo:
 
 ---
 
-## ▶️ Como executar o projeto
+##  Como executar o projeto
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run app/app.py
