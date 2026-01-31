@@ -63,7 +63,7 @@ except Exception as e:
         st.error(f"❌ Todos os métodos falharam: {e2}")
         st.stop()
 
-model_path = project_root / "artifacts" / "rf.joblib"
+model_path = project_root / "artifacts" / "log_reg_model.joblib"
 
 if model_path.exists():
     try:
